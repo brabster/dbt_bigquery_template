@@ -1,5 +1,9 @@
 A candidate template for a standalone dbt-core/dbt-bigquery based repository.
 
+![Equal Experts logo](https://avatars.githubusercontent.com/u/661706?s=200&v=4)
+
+Thanks to [Equal Experts](https://equalexperts.com) for funding this work.
+
 # Pre-Reqs
 
 - Python >= 3.11
