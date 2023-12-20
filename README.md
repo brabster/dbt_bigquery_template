@@ -54,7 +54,7 @@ This repo assumes that developers will have such a sandbox (or will have permiss
 
 ## Always Up-To-Date
 
-There are several supply chains providing dependencies for this repo. When development interactively (ignoring your machine), important sources are:
+There are several supply chains providing dependencies for this repo. When developing interactively, important sources are:
 
 - Your Python runtime, including the venv module
 - `pip` package manager in the virtualenv
