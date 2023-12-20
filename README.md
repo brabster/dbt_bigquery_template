@@ -3,11 +3,15 @@ A candidate template for a standalone dbt-core/dbt-bigquery based repository.
 # Pre-Reqs
 
 - Python >= 3.11
-- [OPTIONAL] VSCode to use built-in tasks
+- [RECOMMENDED] VSCode to use built-in tasks
 - Access to GCP Project enabled for BigQuery
+- [RECOMMENDED] set environment variable `PIP_REQUIRE_VIRTUALENV=true`
+    - Prevents accidentally installing to your system Python installation (if you have permissions to do so)
 
 # Setup
 
+- open the terminal
+    - `Terminal` - `New Terminal`
 - update .env with appropriate values
     - note project ID not project name (manifests as 404 error)
     - `. .env` to update values in use in terminal
@@ -16,6 +20,8 @@ A candidate template for a standalone dbt-core/dbt-bigquery based repository.
     - must be application default credential
     - `gcloud auth application-default login`
 - `dbt debug` should now succeed and list settings/versions
+    - if `dbt` is not found, you may need to enter your venv at the terminal
+        - `. .venv/bin/activate` (`. .venv/Scripts/activate` on Windows/Git-Bash)
 
 # Assumptions
 
