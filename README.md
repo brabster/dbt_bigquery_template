@@ -39,11 +39,17 @@ There is a `main` branch, which is the current version of the data product. This
 
 ## Always Up-To-Date
 
-There are several supply chains providing dependencies for this repo. When development interactively (ignoring your machine), the relevant sources are:
+There are several supply chains providing dependencies for this repo. When development interactively (ignoring your machine), important sources are:
 
+- Your Python runtime, including the venv module
+- `pip` package manager in the virtualenv
 - Python packages via PyPI
 - dbt packages
 
 Both of these sources are set by default to update automatically to the latest available versions. A VSCode task is included to automatically update your local environment, and the CI system will update to latest on each run.
 
 I believe this setup minimises the vulnerability risk users of this template are exposed to by default.
+
+## Self-Contained and Self-Describing
+
+The repo aims to be as self-contained as possible, minimising what's needed in an engineer's development environment, and making the CI setup as similar as possible to that of the engineer's environment.
