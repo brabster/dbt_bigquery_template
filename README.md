@@ -61,7 +61,7 @@ There are several supply chains providing dependencies for this repo. When devel
 - Python packages via PyPI
 - dbt packages
 
-Both of these sources are set by default to update automatically to the latest available versions. A VSCode task is included to automatically update your local environment, and the CI system will update to latest on each run.
+Aside from the Python runtime which must be present to bootstrap the repo, these sources are set by default to update automatically to the latest available versions. A VSCode task is included to automatically update your local environment, and the CI system will update to latest on each run.
 
 I believe this setup minimises the vulnerability risk users of this template are exposed to by default.
 
