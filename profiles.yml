@@ -2,9 +2,9 @@ config:
   send_anonymous_usage_stats: false
   use_colors: true
 
-dbt_project:
+current:
   outputs:
-    project:
+    current:
       dataset: "{{ env_var('DBT_DATASET') }}"
       location: "{{ env_var('DBT_LOCATION') }}"
       method: oauth
@@ -12,4 +12,4 @@ dbt_project:
       project: "{{ env_var('DBT_PROJECT') }}"
       threads: "{{ env_var('DBT_THREADS', 8) }}"
       type: bigquery
-  target: project
+  target: current

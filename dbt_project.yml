@@ -1,13 +1,12 @@
-
-# Name your project! Project names should contain only lowercase characters
-# and underscores. A good package name should reflect your organization's
-# name or the intended use of these models
-name: 'dbt_project'
+# there's a bunch of metadata in here that might only really make sense in dbt cloud
+# In the deployments I've been involved with I've found that there's no discernable value in setting these values.
+# As such I set these parameters to generic values that line everything up in a given repo.
+name: 'product' # only referred to in this config file
 version: '1.0.0'
 config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
-profile: 'dbt_project'
+profile: 'current'
 
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
@@ -31,13 +30,17 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   +persist_docs:
+    # push any model/column descriptions to the target database
     relation: true
     columns: true
 
 tests:
-  dbt_project:
+  product:
     daily:
+      # tests in the daily folder should have this clause appended to their where clause
+      # used here to limit the data scanned by the query
+      # note the predicate pushdown to the underlying timestamp column in the source data
       +where: download_date BETWEEN DATE_SUB(CURRENT_DATE, INTERVAL 4 DAY) AND DATE_SUB(CURRENT_DATE, INTERVAL 1 DAY)
 
 on-run-start:
-  -  "{{ ensure_dataset_exists }}"
+  -  "{{ ensure_target_dataset_exists() }}" # may or may not be appropriate for your environmental constraints

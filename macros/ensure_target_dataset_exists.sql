@@ -8,7 +8,7 @@
 
     CREATE SCHEMA IF NOT EXISTS `{{ project_id }}`.`{{ dataset_name }}`
     OPTIONS (
-        location = {{ dataset_location }}
+        location = '{{ dataset_location }}'
     )
 
 {% endmacro %}
