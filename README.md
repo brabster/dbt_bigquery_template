@@ -46,7 +46,7 @@ There is a `main` branch, which is the current version of the data product. This
 ## Developer Sandbox Datasets
 
 In order to develop in a branching style without risk of collision between different work-in-progress, engineers will need a  sandbox dataset to work in. I've found that personal sandboxes in the same project as `main` is a simple approach that works well.
-This repo assumes that developers will have such a sandbox (or will have permissions to create one, see `on-run-start` hook in [dbt_project.yml](dbt_project.yml)).
+This repo assumes that developers will have such a sandbox (or will have permissions to create one, see `on-run-start` hook in [dbt_project.yml](dbt_project.yml)) and have set their local, personal `.env` variables to refer to it.
 
 ## Always Up-To-Date
 
