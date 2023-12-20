@@ -45,7 +45,7 @@ A team is responsible for actively developing the data product this repository d
 
 ## Trunk-Based Development
 
-There is a `main` branch, which is the current version of the data product. This is the only long-lived branch, and will persist from creation of the repository until it is decommissioned. Engineers will branch from `main` to implemnent a change, then a Pull Request process with appropriate approvals will control the merge of that change back to `main` as the next iteration of the data product.
+There is a `main` branch, which is the current version of the data product. This is the only long-lived branch, and will persist from creation of the repository until it is decommissioned. Engineers will branch from `main` to implement a change, then a Pull Request process with appropriate approvals will control the merge of that change back to `main` as the next iteration of the data product.
 
 ## Developer Sandbox Datasets
 
