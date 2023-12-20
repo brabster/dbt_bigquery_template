@@ -12,4 +12,4 @@ target/
 
 # DBT packages
 dbt_packages/
-package-lock.yml
+package-lock.yml 
