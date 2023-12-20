@@ -43,6 +43,11 @@ A team is responsible for actively developing the data product this repository d
 
 There is a `main` branch, which is the current version of the data product. This is the only long-lived branch, and will persist from creation of the repository until it is decommissioned. Engineers will branch from `main` to implemnent a change, then a Pull Request process with appropriate approvals will control the merge of that change back to `main` as the next iteration of the data product.
 
+## Developer Sandbox Datasets
+
+In order to develop in a branching style without risk of collision between different work-in-progress, engineers will need a  sandbox dataset to work in. I've found that personal sandboxes in the same project as `main` is a simple approach that works well.
+This repo assumes that developers will have such a sandbox (or will have permissions to create one, see `on-run-start` hook in [dbt_project.yml](dbt_project.yml)).
+
 ## Always Up-To-Date
 
 There are several supply chains providing dependencies for this repo. When development interactively (ignoring your machine), important sources are:
