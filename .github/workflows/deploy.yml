@@ -10,6 +10,9 @@ jobs:
         with:
           python-version: '>=3.11'
           check-latest: true
+      - run: python --version
+      - run: pwd
+      - run: ls -lart
       - run: python -m venv .venv
       - run: . venv/bin/activate
       - run: pip install -U -r requirements.txt
