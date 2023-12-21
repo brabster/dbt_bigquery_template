@@ -4,6 +4,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      PIP_REQUIRE_VIRTUALENV: true
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -14,6 +16,7 @@ jobs:
       - run: python -m venv .venv
       - run: . .venv/bin/activate
       - run: pip install -U -r requirements.txt
+      - run: dbt debug
           
       
       
