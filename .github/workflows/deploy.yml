@@ -11,7 +11,8 @@ jobs:
         id-token: write
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/dependency-review-action@v3
+        with:
+          base-ref: ref
       - uses: ./.github/actions/setup_dbt
       - uses: google-github-actions/auth@v2
         with:
