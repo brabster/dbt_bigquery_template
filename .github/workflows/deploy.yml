@@ -35,7 +35,7 @@ jobs:
         run: |
           source .venv/bin/activate
           source .envs/test.env
-          gcloud auth activate-service-account --key-file=$GOOGLE_APPLICATION_CREDENTIALS
+          bq ls my_dataset
           dbt debug
           
       
