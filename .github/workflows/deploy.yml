@@ -6,11 +6,14 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PIP_REQUIRE_VIRTUALENV: true
+    permissions:
+        contents: read
+        id-token: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.11' # dbt does not support 3.12 yet
           check-latest: true
       - name: setup-python-venv
         run: |
@@ -18,7 +21,16 @@ jobs:
           python -m venv .venv
           source .venv/bin/activate
           pip install -U pip
-          pip install -U -r requirements.txt    
+          pip install -U -r requirements.txt
+      - uses: 'google-github-actions/auth@v2'
+        with:
+          workload_identity_provider: 'projects/472162324340/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
+          service_account: 'github-deploy@pypi-408816.iam.gserviceaccount.com'
+      - uses: google-github-actions/setup-gcloud@v2
+        with:
+          version: '>= 363.0.0'
+      - name: 'Use gcloud CLI'
+        run: 'gcloud info'
       - name: dbt-debug
         run: |
           source .venv/bin/activate
