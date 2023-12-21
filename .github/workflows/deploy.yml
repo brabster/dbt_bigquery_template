@@ -29,15 +29,22 @@ jobs:
       - uses: google-github-actions/setup-gcloud@v2
         with:
           version: '>= 363.0.0'
-      - name: 'Use gcloud CLI'
-        run: 'gcloud info'
       - name: 'dbt build test'
         run: |
           source .venv/bin/activate
           source .envs/test.env
-          dbt debug
           dbt deps
+          dbt debug
           dbt build
+      - name: 'dbt build prod'
+        run: |
+          source .venv/bin/activate
+          source .envs/prod.env
+          dbt deps
+          dbt debug
+          dbt build
+
+        
           
       
       
