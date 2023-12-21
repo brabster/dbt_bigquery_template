@@ -16,7 +16,8 @@ jobs:
         run: |
           python --version
           python -m venv .venv
-          . .venv/bin/activate
+          source .venv/bin/activate
+          echo $PATH
           echo PATH=$PATH >> $GITHUB_ENV
       - id: install-update-python-deps
         run: |
