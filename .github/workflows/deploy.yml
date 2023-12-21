@@ -10,19 +10,8 @@ jobs:
         contents: read
         id-token: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11' # dbt does not support 3.12 yet
-          check-latest: true
-      - name: setup-python-venv
-        run: |
-          python --version
-          python -m venv .venv
-          source .venv/bin/activate
-          pip install -U pip
-          pip install -U -r requirements.txt
-      - uses: 'google-github-actions/auth@v2'
+      - uses: brabster/dbt_bigquery_template/.github/workflows/setup_dbt.yml@main
+      - uses: google-github-actions/auth@v2
         with:
           workload_identity_provider: 'projects/472162324340/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
           service_account: 'github-deploy@pypi-408816.iam.gserviceaccount.com'
