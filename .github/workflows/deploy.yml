@@ -35,8 +35,8 @@ jobs:
         run: |
           source .venv/bin/activate
           source .envs/test.env
-          bq ls my_dataset
           dbt debug
+          dbt build
           
       
       
