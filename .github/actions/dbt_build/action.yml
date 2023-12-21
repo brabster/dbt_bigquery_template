@@ -1,0 +1,18 @@
+
+name: dbt build in venv
+description: Runs dbt build from venv
+inputs:
+  env-file:
+    required: true
+    description: Environment file to source
+runs:
+  using: composite
+  steps:
+    - name: dbt build for ${{ inputs.env-file }}
+      run: |
+          source .venv/bin/activate
+          source ${{ inputs.env-file }}
+          dbt deps
+          dbt debug
+          dbt build
+
