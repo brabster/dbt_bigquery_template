@@ -16,7 +16,11 @@ jobs:
           python --version
           python -m venv .venv
           . .venv/bin/activate
+          echo PATH=$PATH >> $GITHUB_ENV
+      - run: |
+          pip install -U pip
           pip install -U -r requirements.txt
+      - run: |
           dbt debug
           
       
