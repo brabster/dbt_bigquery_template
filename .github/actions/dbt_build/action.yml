@@ -9,6 +9,7 @@ runs:
   using: composite
   steps:
     - name: dbt build for ${{ inputs.env-file }}
+      shell: bash
       run: |
           source .venv/bin/activate
           source ${{ inputs.env-file }}
