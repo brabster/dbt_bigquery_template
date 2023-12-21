@@ -12,11 +12,12 @@ jobs:
         with:
           python-version: '>=3.11'
           check-latest: true
-      - run: python --version
-      - run: python -m venv .venv
-      - run: . .venv/bin/activate
-      - run: pip install -U -r requirements.txt
-      - run: dbt debug
+      - run: |
+          python --version
+          python -m venv .venv
+          . .venv/bin/activate
+          pip install -U -r requirements.txt
+          dbt debug
           
       
       
