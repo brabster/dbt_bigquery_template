@@ -17,15 +17,11 @@ jobs:
           python --version
           python -m venv .venv
           source .venv/bin/activate
-          echo $PATH
-          echo PATH=$PATH >> $GITHUB_ENV
-      - name: install-update-python-deps
-        run: |
-          echo $PATH
           pip install -U pip
-          pip install -U -r requirements.txt
+          pip install -U -r requirements.txt    
       - name: dbt-debug
         run: |
+          source .venv/bin/activate
           dbt debug
           
       
