@@ -12,15 +12,18 @@ jobs:
         with:
           python-version: '>=3.11'
           check-latest: true
-      - run: |
+      - id: setup-python-venv
+        run: |
           python --version
           python -m venv .venv
           . .venv/bin/activate
           echo PATH=$PATH >> $GITHUB_ENV
-      - run: |
+      - id: install-update-python-deps
+        run: |
           pip install -U pip
           pip install -U -r requirements.txt
-      - run: |
+      - id: dbt-debug
+        run: |
           dbt debug
           
       
