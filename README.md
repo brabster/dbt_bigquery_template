@@ -1,8 +1,8 @@
 A candidate template for a standalone dbt-core/dbt-bigquery based repository.
 
-![Equal Experts logo](https://avatars.githubusercontent.com/u/661706?s=200&v=4)
+Thanks to [Equal Experts](https://equalexperts.com) for supporting this work.
 
-Thanks to [Equal Experts](https://equalexperts.com) for funding this work.
+dbt docs automatically published on deployment at https://brabster.github.io/dbt_bigquery_template/
 
 # Pre-Reqs
 
