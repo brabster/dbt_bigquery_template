@@ -20,12 +20,9 @@ runs:
     - name: upload target artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: dbt_target_directory
-        path: target
-    - name: upload log artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        name: dbt_log_directory
-        path: logs
+        name: dbt_artifacts_${{ env.DBT_DATASET }}
+        path: |
+          target
+          logs
 
 
