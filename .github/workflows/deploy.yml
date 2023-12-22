@@ -24,12 +24,7 @@ jobs:
           version: '>= 363.0.0'
       - uses: ./.github/actions/dbt_build
         with:
-          env-file: ./.envs/test.env
+          env: test
       - uses: ./.github/actions/dbt_build
         with:
-          env-file: ./.envs/prod.env
-      - uses: ./.github/actions/dbt_build
-        with:
-          env-file: ./.envs/prod.env
-      
-      
+          env: prod
