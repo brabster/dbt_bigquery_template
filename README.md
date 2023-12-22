@@ -6,7 +6,7 @@ Thanks to [Equal Experts](https://equalexperts.com) for funding this work.
 
 # Pre-Reqs
 
-- Python >= 3.11
+- Python == 3.11 (see https://docs.getdbt.com/faqs/Core/install-python-compatibility)
 - [RECOMMENDED] VSCode to use built-in tasks
 - Access to GCP Project enabled for BigQuery
 - [RECOMMENDED] set environment variable `PIP_REQUIRE_VIRTUALENV=true`
