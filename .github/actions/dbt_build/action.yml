@@ -19,13 +19,13 @@ runs:
           echo "dbt test goes here"
     - name: upload target artifacts
       uses: actions/upload-artifact@v3
-        with:
-          name: dbt_target_directory
-          path: target
+      with:
+        name: dbt_target_directory
+        path: target
     - name: upload log artifacts
       uses: actions/upload-artifact@v3
-        with:
-          name: dbt_log_directory
-          path: logs
+      with:
+        name: dbt_log_directory
+        path: logs
 
 
