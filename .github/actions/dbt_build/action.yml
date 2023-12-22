@@ -13,6 +13,8 @@ runs:
       run: |
           source .venv/bin/activate
           source .envs/${{ inputs.env }}.env
+          rm -rf logs
+          dbt clean
           dbt deps
           dbt debug
           dbt run
