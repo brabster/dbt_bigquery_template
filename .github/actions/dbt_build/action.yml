@@ -12,13 +12,12 @@ runs:
       shell: bash
       run: |
           source .venv/bin/activate
-          source .envs/${{ inputs.env }}.env
+          source .envs/${{ inputs.env }}/.env
           rm -rf logs
           dbt clean
           dbt deps
           dbt debug
-          dbt run
-          echo "dbt test goes here"
+          dbt build
           dbt docs generate
     - name: upload target artifacts
       uses: actions/upload-artifact@v3

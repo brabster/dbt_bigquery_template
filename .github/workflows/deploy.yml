@@ -13,8 +13,6 @@ jobs:
         pages: write
     steps:
       - uses: actions/checkout@v4
-        with:
-          base-ref: ref
       - uses: ./.github/actions/setup_dbt
       - uses: google-github-actions/auth@v2
         with:
@@ -23,10 +21,15 @@ jobs:
       - uses: google-github-actions/setup-gcloud@v2
         with:
           version: '>= 363.0.0'
-      - uses: ./.github/actions/dbt_build
-        with:
-          env: test
-      - uses: ./.github/actions/dbt_build
+      - name: ensure prod dataset exists
+        run: |
+          source .venv/bin/activate
+          source .envs/prod/.env
+          dbt deps
+          dbt run-operation ensure_target_dataset_exists
+          # bq update --source .envs/prod/dataset_acl.json "${DBT_PROJECT}:${DBT_DATASET}"
+      - name: prod dbt build
+        uses: ./.github/actions/dbt_build
         with:
           env: prod
       - uses: actions/upload-pages-artifact@v3
