@@ -4,19 +4,21 @@
     "version": "2.0.0",
     "tasks": [
       {
+        "label": "is_in_virtualenv",
+        "type": "shell",
+        "command": "if [ $(python -c 'import sys; print(sys.prefix != sys.base_prefix)') == 'False' ]; then echo 'Not in virtualenv, aborting'; exit(1); fi"
+      },
+      {
         "label": "ensure_pip_version",
         "type": "shell",
-        "command": "pip install --upgrade pip"
+        "command": "pip install --upgrade pip",
+        "dependsOn": ["is_in_virtualenv"]
       },
       {
         "label": "ensure_python_deps_updated",
         "type": "shell",
-        "command": "pip install -U -r ${workspaceFolder}/requirements.txt"
-      },
-      {
-        "label": "load_user_env",
-        "type": "shell",
-        "command": ". ${workspaceFolder}/.env"
+        "command": "pip install -U -r ${workspaceFolder}/requirements.txt",
+        "dependsOn": ["is_in_virtualenv"]
       },
       {
         "label": "ensure_dbt_packages_updated",
