@@ -25,6 +25,9 @@ pip install -U -r ${PROJECT_DIR}/requirements.txt
 echo "install or upgrade dbt dependencies"
 dbt deps
 
+echo "check for vulnerabilities"
+safety check
+
 echo "load user environment, if present"
 ENV_PATH=${PROJECT_DIR}/.env
 if [ -f "${ENV_PATH}" ]; then

@@ -14,18 +14,21 @@ dbt docs automatically published on deployment at https://brabster.github.io/dbt
 
 # Setup
 
-> Note - on first open, automated tasks that update your local dependency versions will fail because your virtualenv is not yet created. My attempts to automate this process haven't turned out to be reliable, so bootstrapping instructions are provided below. Once set up, automated dependency updates should execute automatically when you open this directory in VSCode.
+## Setup Local
 
-- open the terminal
-    - `Terminal` - `New Terminal`
-- create virtualenv and install dependencies
-    - Use [VSCode options](https://code.visualstudio.com/docs/python/environments#_creating-environments)
-        - `Python - Create Environment`, accept defaults
-    - OR manually
-        - `python -m venv .venv` (other parts of the project assume venv is in `.venv`, so find/replace if you change that)
-        - `source .venv/bin/activate` (`source .venv/Scripts/activate` on Windows/Git-Bash)
-        - VSCode command `Python - Select Interpreter`
-    - Install dependencies: `pip install -U -r requirements.txt`
+Setting up the local software without any need for Data Warehouse credentials.
+
+A VSCode task triggers a shell script [.dev_scripts/init_and_update.sh](.dev_scripts/init_and_update.sh)
+which should take care of setting up a virtualenv if necessary, then installing/updating software and running a vulnerability scan.
+
+> Note - the vulnerability scan is performed using [safety](https://pypi.org/project/safety/), which is *not free for commercial use* and has limitations on freshness and completeness of the vulnerability database.
+
+That script describes the steps involved in a full setup if you are unable to run a bash script and need to translate to some other language.
+
+## Connect to Data Warehouse
+
+Set up credentials and environment and test connectivity.
+
 - update .env with appropriate values
     - note project ID not project name (manifests as 404 error)
     - `. .env` to update values in use in terminal
