@@ -13,7 +13,7 @@ Spend less time setting up and get to insights faster with this opinionated temp
 
 # Walkthrough Video
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/KQg6D0Mkyks?si=cojGPDuXu5HIACIJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[Walkthrough Video on YouTube](https://youtu.be/KQg6D0Mkyks?si=PY3dnfYNa9G-8E62)
 
 # Pre-Reqs
 
