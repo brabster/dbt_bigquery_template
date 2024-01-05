@@ -1,8 +1,19 @@
-A candidate template for a standalone dbt-core/dbt-bigquery based repository.
+# Supporters
 
-Thanks to [Equal Experts](https://equalexperts.com) for supporting this work.
+<a href="https://equalexperts.com">
+    <img alt="Equal Experts logo"
+        src="https://www.equalexperts.com/wp-content/themes/equalexperts/assets/logos/colour/equal-experts-logo-colour.png"
+        style="height:75px">
+    </img>
+</a>
 
-dbt docs automatically published on deployment at https://brabster.github.io/dbt_bigquery_template/
+# Overview
+
+Spend less time setting up and get to insights faster with this opinionated template for a standalone DBT-based project.
+
+# Walkthrough Video
+
+[Walkthrough Video on YouTube](https://youtu.be/KQg6D0Mkyks?si=PY3dnfYNa9G-8E62)
 
 # Pre-Reqs
 
