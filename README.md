@@ -11,6 +11,8 @@
 
 Spend less time setting up and get to insights faster with this opinionated template for a standalone DBT-based project.
 
+**This repository is provided without warranty or commitment to maintain. I reserve the right to reject pull requests and issues raised at my discretion.** See [CONTRIBUTORS.md](CONTRIBUTORS.md) for further instructions.
+
 # Walkthrough Video
 
 [Walkthrough Video on YouTube](https://youtu.be/KQg6D0Mkyks?si=PY3dnfYNa9G-8E62)
